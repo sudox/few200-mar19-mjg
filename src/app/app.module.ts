@@ -8,6 +8,13 @@ import { NavComponent } from './components/nav/nav.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { CommunicationsModule } from './features/communications/communications.module';
+import { ReduxDemoComponent } from './components/redux-demo/redux-demo.component';
+import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { reducers } from './reducers';
+import { EffectsModule } from '@ngrx/effects';
+import { CounterEffects } from './effects/counter.effects';
+import { TodolistModule } from './features/todolist/todolist.module';
 
 @NgModule({
   declarations: [
@@ -15,12 +22,17 @@ import { CommunicationsModule } from './features/communications/communications.m
     HeaderComponent,
     NavComponent,
     DashboardComponent,
-    FooterComponent
+    FooterComponent,
+    ReduxDemoComponent
   ],
   imports: [
     BrowserModule,
     CommunicationsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    StoreModule.forRoot(reducers),
+    StoreDevtoolsModule.instrument(), // Can be removed for production
+    EffectsModule.forRoot([CounterEffects]),
+    TodolistModule
   ],
   providers: [],
   bootstrap: [AppComponent]

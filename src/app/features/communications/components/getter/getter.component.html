@@ -1,0 +1,9 @@
+<div class="form-group">
+  <h3>{{ message }}</h3>
+  <h3>{{ message$ | async }}</h3>
+  <!-- When there is a $ sign, put | async, always, it'll wire up the subscriptions -->
+  <input type="button"
+         class="btn btn-primary"
+         value="Get it"
+         (click)="getIt()">
+</div>
