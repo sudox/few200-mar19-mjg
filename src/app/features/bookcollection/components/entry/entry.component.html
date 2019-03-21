@@ -1,0 +1,19 @@
+<div class="form-group">
+  <label>Title</label>
+  <input class="form-control"
+         #title>
+  <label>Author</label>
+  <input class="form-control"
+         #author>
+  <label>Format</label>
+  <select class="form-control"
+          #format>
+    <option>Paperback</option>
+    <option>Hardcover</option>
+    <option>E-Book</option>
+  </select>
+  <input type="button"
+         class="btn btn-primary"
+         (click)="add(title, author, format)"
+         value="Add">
+</div>

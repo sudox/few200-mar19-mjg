@@ -1,0 +1,9 @@
+<ul class="list-unstyled">
+  <li class="alert alert-success"
+      *ngFor="let item of items">
+    <h4 class="alert-heading">{{ item.title }}</h4>
+    <p>By: {{ item.author }}</p>
+    <hr>
+    <p class="mb-0">{{ item.format }}</p>
+  </li>
+</ul>
