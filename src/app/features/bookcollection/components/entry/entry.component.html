@@ -1,18 +1,22 @@
-<div class="form-group">
+<form #bookForm="ngForm"
+      class="form-group">
   <label>Title</label>
   <input required
+         name="title"
          class="form-control"
          [(ngModel)]="title.text"
          #validateTitle="ngModel"
          #title>
   <label>Author</label>
   <input required
+         name="author"
          class="form-control"
          [(ngModel)]="author.text"
          #validateAuthor="ngModel"
          #author>
   <label>Format</label>
   <select class="form-control"
+          name="format"
           #format>
     <option>Paperback</option>
     <option>Hardcover</option>
@@ -21,10 +25,10 @@
   <input type="button"
          [disabled]="validateTitle.invalid || validateAuthor.invalid"
          class="btn btn-primary"
-         (click)="add(title, author, format)"
+         (click)="add(title, author, format); bookForm.reset();"
          value="Add">
   <div class="alert alert-danger"
        *ngIf="validateTitle.invalid">A title is required</div>
   <div class="alert alert-danger"
        *ngIf="validateAuthor.invalid">An author is required</div>
-</div>
+</form>
