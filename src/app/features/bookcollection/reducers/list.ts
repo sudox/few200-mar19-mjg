@@ -1,11 +1,7 @@
 import { createEntityAdapter, EntityState } from '@ngrx/entity';
 import * as actions from '../actions/list.actions';
 
-
-
-export interface State extends EntityState<BookEntity> {
-
-}
+export interface State extends EntityState<BookEntity> { }
 
 export const adapter = createEntityAdapter<BookEntity>();
 

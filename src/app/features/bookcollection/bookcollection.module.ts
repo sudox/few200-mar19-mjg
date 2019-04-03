@@ -8,7 +8,10 @@ import { reducers } from './reducers';
 import { FormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [BookcollectionComponent, EntryComponent, ListComponent],
+  declarations: [
+    BookcollectionComponent,
+    EntryComponent,
+    ListComponent],
   imports: [
     CommonModule,
     StoreModule.forFeature('bookCollectionFeature', reducers),
